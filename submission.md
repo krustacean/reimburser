@@ -10,11 +10,11 @@ User should be able to....
 4. Ask CC company to reimburse the difference if item is significantly lower elsewhere (possibly able to adjust settings here for what triggers a reimbursement)
 7. Create a "watchlist"
 8. Have watchlist notify you if price drops below a certain threshold
-9. 
+
 
 
 ##### User Stories
-User will log in to his account, select a purchase he has made and the app wil generate a list of comparisons.
+User will log in to his account, select a purchase he has made and the app will generate a list of comparisons.
 The user will set a cost threshold, and if the potential products's cost dips below the threshold a notification will be generated.
 The user will then call his credit card company to initiate a reimbursement.
 
