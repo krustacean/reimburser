@@ -1,4 +1,4 @@
-###### Scope
+##### Scope
 
 User should be able to....
 
@@ -20,3 +20,14 @@ The user will then call his credit card company to initiate a reimbursement.
 
 Later changes include connecting the credit card information to the app to automate  certain aspects.
 
+##### Models
+
+##### Wireframes
+
+##### Milestones
+- Planning
+- Data Models
+- User Login
+- Base UI
+- Price Watching Working
+- Styling
