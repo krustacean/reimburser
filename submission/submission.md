@@ -9,7 +9,9 @@ User should be able to....
 7. Create a "watchlist" and criteria for notification
 4. Compare cost of purchased item to cost of same item at other stores
 8. Have watchlist notify you if price drops below a certain threshold
-
+7. Create a "watchlist" and criteria for notification
+4. Compare cost of purchased item to cost of same item at other stores
+8. Have watchlist notify you if price drops below a certain threshold
 
 
 ##### User Stories
@@ -28,10 +30,10 @@ Later changes include connecting the credit card information to the app to autom
 - Planning
 - Data Models
 - Wireframes Implemented
+- Amazon Price Checking Working
 - Base Views Complete
 - User Login
 - Setup OAuth
-- Amazon Price Checking Working
 - Price Watching Working
 - Getting Screenshot Proof
 - Email Notifications
