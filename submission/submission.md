@@ -5,8 +5,9 @@ User should be able to....
 1. Sign up for an account
 2. Create a profile
 4. View recently purchased items
+5. Manually add and search for items through amazon.
+7. Create a "watchlist" and criteria for notification
 4. Compare cost of purchased item to cost of same item at other stores
-7. Create a "watchlist"
 8. Have watchlist notify you if price drops below a certain threshold
 
 
@@ -19,13 +20,20 @@ The user will then call his credit card company to initiate a reimbursement.
 Later changes include connecting the credit card information to the app to automate  certain aspects.
 
 ##### Models
+![](model.jpg)
 
 ##### Wireframes
-
+![](wireframe.jpg)
 ##### Milestones
 - Planning
 - Data Models
+- Wireframes Implemented
+- Base Views Complete
 - User Login
-- Base UI
+- Setup OAuth
+- Amazon Price Checking Working
 - Price Watching Working
+- Getting Screenshot Proof
+- Email Notifications
 - Styling
+- 1.0 Release
