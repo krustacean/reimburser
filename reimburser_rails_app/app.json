@@ -1,0 +1,9 @@
+
+{
+  "name": "Reimburser Rails app",
+  "description": "Personal product price watcher and purchase tracking software.",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/krustacean/reimburser",
+  "keywords": ["ruby", "rails" ],
+  "addons": [ "heroku-postgresql" ]
+}
