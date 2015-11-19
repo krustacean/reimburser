@@ -19,8 +19,8 @@
         <li><a href="#">Services</a></li>
         <li><a href="#">Works</a></li>
         <% if user_signed_in? %>
-     
       <li><%= link_to('Logout', destroy_user_session_path, :method => :delete)%></li>
+      <li><a href="/users/<%= @user[:id] %>/edit">Edit Profile</a></li>
     <% else %>
       <li><a href="/sign_in">Log in</a></li>
     <% end %>
