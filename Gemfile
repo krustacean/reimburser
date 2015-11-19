@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Omniauth Amazon Gem
+gem 'omniauth-amazon'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
