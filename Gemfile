@@ -1,10 +1,12 @@
+#must be at the top
+gem 'dotenv-rails', :groups => [:development, :test]
 
+gem 'omniauth-oauth2', '~> 1.3.1'
 # Omniauth Amazon Gem
 gem 'omniauth-amazon'
 
 
 
-gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
