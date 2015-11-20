@@ -5,6 +5,7 @@ gem 'omniauth-oauth2', '~> 1.3.1'
 # Omniauth Amazon Gem
 gem 'omniauth-amazon'
 
+gem 'amazon-ecs'
 
 
 
