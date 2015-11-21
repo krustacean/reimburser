@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   resources :users, :transactions
+
+  get "/transactions/search/:search", to: "transactions#search", as:"search"
 end
