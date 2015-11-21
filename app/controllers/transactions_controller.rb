@@ -31,7 +31,7 @@ class TransactionsController < ApplicationController
 			    #p "ASIN: #{item.get('ASIN')} Title: #{item.get('ItemAttributes/Title')}  Price: #{item.get('OfferSummary/LowestNewPrice/FormattedPrice')}"
 				end
 		 	 end
-
+		 	 
 		#end
 	end
 
