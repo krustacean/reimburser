@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
+  get '/about', to: "welcome#about"
+
   resources :users, :transactions
-
-  get "/transactions/search/:search", to: "transactions#search", as:"search"
-
+end

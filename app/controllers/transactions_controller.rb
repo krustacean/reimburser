@@ -31,9 +31,7 @@ class TransactionsController < ApplicationController
         search_item["current_price"] = item.get('OfferSummary/LowestNewPrice/FormattedPrice')
         @searchresult.push search_item
       end
-      respond_to do |format|
-        format.html
-        format.json { render :json => @searchresult }
+      render :json => @searchresult
       end
 
 
@@ -52,5 +50,5 @@ class TransactionsController < ApplicationController
       end
 
     end
-  end
-
+  
+end
