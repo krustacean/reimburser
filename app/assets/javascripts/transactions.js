@@ -2,9 +2,9 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function() {
-	console.log("hello");
+	
 	$("#searchstuff").on('submit', function(e){
-		console.log("sup");
+		
 		e.preventDefault();
 		var search = $("#searchInput").val();
 		console.log(search);
@@ -13,7 +13,7 @@ $(document).ready(function() {
 			dataType: 'json',
 			success: function(data){
 				data.forEach(function(n){
-					$(".showresults").append(n.name, n.current_price);
+					$(".showresults").append(n.name, n.current_price, n.image_url);
 				});
 			}
 		});
