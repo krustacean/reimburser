@@ -1,25 +1,22 @@
 // # Place all the behaviors and hooks related to the matching controller here.
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
-
-$("form").submit(function(){
-	$.ajax({
-		url: "/transactions/new",
-		data: {
-			format: json
-		},
-		success: function(data){
-			data.forEach(function(n){
-				$(".showresults").append(n.title);
-			});
-		}
-
-	});
-});
- console.log("jquery connected");
-  $("form").on("ajax:success", function(data){
-			data.forEach(function(n){
-				$(".showresults").append(n.title);
-			});
+$(document).ready(function() {
+	console.log("hello");
+	$("#searchstuff").on('submit', function(e){
+		console.log("sup");
+		e.preventDefault();
+		var search = $("#searchInput").val();
+		console.log(search);
+		$.ajax({
+			url: "/transactions/search/" + search ,
+			dataType: 'json',
+			success: function(data){
+				data.forEach(function(n){
+					$(".showresults").append(n.name, n.current_price);
+				});
+			}
 		});
- 
+	});	
+});
+
