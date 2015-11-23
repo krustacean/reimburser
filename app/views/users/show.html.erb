@@ -1,5 +1,8 @@
-<span style="float:left;font-size:30px;margin-right:0"><%= @user.email %></span><button style="float:right; display:block; font-size:30px; margin-right:5px">Track New Item</button>
-<h5>Your Tracked Purchases</h5>
+<span style="float:left;font-size:30px;margin-left:10px">Welcome, <%= @user.email %>!</span><button style="float:right; display:block; font-size:30px; margin-right:10px"><%= link_to "Track New Item", new_transaction_path(current_user)%></button>
+<br>
+<br>
+<br>
+<h4>Your Tracked Purchases</h4>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -15,10 +18,11 @@
   <tbody>
   <% @user.transactions.first(10).each do |t|%>
     <tr>
+      <% t.update_price %>
       <td><%= link_to t.name, t.listing_url %></td>
       <td><%= "$#{t.purchase_price.to_s}" %></td>
       <td><%= "$#{t.target_price.to_s}" %></td>
-      <td style="color:green"><%= t.current_price %></td>
+      <td style="color:green"><%= t.format_price %></td>
       <td><%= t.purchase_price - t.current_price%></td>
       <td><%= t.start_date.to_s(:long) %></td>
       <td><%= t.end_date.to_s(:long) %></td>
