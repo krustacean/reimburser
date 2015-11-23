@@ -1,5 +1,8 @@
-<h2><%= @user.email %></h2>
-<h5>Your Tracked Purchases</h5>
+<span style="float:left;font-size:30px;margin-left:10px">Welcome, <%= @user.email %>!</span><button style="float:right; display:block; font-size:30px; margin-right:10px"><%= link_to "Track New Item", new_transaction_path(current_user)%></button>
+<br>
+<br>
+<br>
+<h4>Your Tracked Purchases</h4>
 <table class="table table-striped">
   <thead>
     <tr>
