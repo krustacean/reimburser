@@ -6,10 +6,24 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, :omniauth_providers=>[:amazon]
 
-  after_create :send_welcome_mail
-  def send_welcome_mail
-     Contact.welcome_email(self.email, self.name).deliver
-  end
+  # after_create :send_welcome_mail
+  # def send_welcome_mail
+  #    @user = User.new(params[:user])
+
+  #     respond_to do  |format|
+  #       if @user.save
+  #         #tell the usermailer to send a welcome email
+  #         UserMailer.welcome_email(@user).deliver_later
+
+  #         format.html { redirect_to(@user, notice: 'User was successfully created.')}
+  #         format.json { render json: @user, status: created, location: @user}
+
+  #       else format.html {render action: 'new'}
+  #             format.json{render json: @user.errors, status: :unprocessable_entity }
+  #           end
+  #         end
+  #       end
+  # end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -20,4 +34,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def confirm!
+    welcome_email
+    super
+  end
+
+
+ 
+  
 end
