@@ -4,13 +4,42 @@
 
 <form id = "searchstuff" action = "submit">
 
-			<input type="text" name="search" id="searchInput">
+	<input type="text" name="search" id="searchInput">
 
-			<button type="submit" class="btn btn-primary">Search</button>
+	<button type="submit" class="btn-primary"><i class="glyphicon glyphicon-search"></i></button>
 </form>
 
+<div class='container text-center'>
+	<div class = 'row'>
+		
+			<div class='showresults'>
+			
+			</div>	
+		
+	</div>
+</div>
 
-<div class = "showresults">
-
-
+<div id="complete-dialog" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Track New Item</h4>
+      </div>
+      <div class="modal-body">
+	<%= form_for @transaction do |f| %>
+	  	<div>
+	    <%= f.text_field :name, placeholder: "Item Name", class: "form-control floating-label" %>
+	 	 </div><br>
+	  	<div>
+	    <%= f.text_area :upc, placeholder: "UPC", class: "form-control floating-label" %>
+	  	</div>
+	  	<div>
+	    <%= f.text_area :asin, placeholder: "ASIN", class: "form-control floating-label" %>
+	  	</div>
+	<%= f.submit "Submit", class: "btn" %>
+	<% end %> 
+      </div>
+    </div>
+  </div>
 </div>

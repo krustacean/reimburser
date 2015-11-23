@@ -26,3 +26,21 @@ background-image: url("https://images.unsplash.com/photo-1430165558479-de3cf8cf1
 background-repeat: no-repeat;
 background-size: cover;
 }
+.showresults {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start; 
+	align-content: flex-start; 
+	}
+.thumbnail{
+	align-self: auto;
+	width: 200px;
+  	height: 400px;
+
+}
+.imagethumb{
+	max-height: 160px;
+	max-width: auto;
+}
