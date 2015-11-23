@@ -14,6 +14,19 @@ class TransactionsController < ApplicationController
     render :json => amazon_list
   end
 
+  def create
+    @user = current_user
+    transaction_params = params.require(:transaction).permit(:user_id, :name, :asin, :purchase_price, :target_price, :start_date, :end_date)
+    @transaction = Transaction.create(transaction_params)
+    # @user.transaction << @transaction
+    current_user.transactions << @transaction
+   
+  
+    current_user.save
+    redirect_to "/users/#{@user.id}"
+    
+  end
+
   # def show
   #   @user = current_user
   #   @transaction = Transaction.find(params[:id])
