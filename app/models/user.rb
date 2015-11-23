@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, :omniauth_providers=>[:amazon]
 
+  after_create :send_welcome_mail
+  def send_welcome_mail
+     Contact.welcome_email(self.email, self.name).deliver
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -14,4 +19,5 @@ class User < ActiveRecord::Base
       # user.image = auth.info.image # assuming the user model has an image
     end
   end
+
 end
