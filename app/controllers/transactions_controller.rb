@@ -10,7 +10,7 @@ class TransactionsController < ApplicationController
   end
 
   def search
-    amazon_list = search_list params[:search]
+    amazon_list = search_amazon_for_list params[:search]
     render :json => amazon_list
   end
 

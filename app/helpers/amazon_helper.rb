@@ -9,7 +9,7 @@ module AmazonHelper
     Amazon::Ecs.item_search(search, :response_group => 'Medium', :search_index => 'All')
   end
 
-  def search_list(search)
+  def search_amazon_for_list(search)
     res = search_amazon(search)
     @searchresult = []
     res.items.each do |item|
@@ -25,7 +25,7 @@ module AmazonHelper
     return @searchresult
   end
 
-  def search_price asin
+  def search_item_price asin
     res = search_amazon asin
     res.items.first.get('OfferSummary/LowestNewPrice/Amount')
   end
