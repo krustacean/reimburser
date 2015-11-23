@@ -14,6 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-4">
       <ul class="nav navbar-nav navbar-right">
+       <li><a href="/about">About</a></li>
+      <li><a href="/faq">FAQ</a></li>
         <% if user_signed_in? %>
           <li data-no-turbolink><%= link_to "Add Item", new_transaction_path%></li>
           <li class="dropdown">
@@ -31,8 +33,7 @@
         <li><%= link_to "Sign Up", new_user_registration_path%> </li>
         <% end %>
       </li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/faq">FAQ</a></li>
+     
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container -->
