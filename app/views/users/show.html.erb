@@ -7,7 +7,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Price</th>
+      <th>Purchased Price</th>
       <th>Target Price</th>
       <th>Current Price</th>
       <th>Savings</th>
@@ -19,8 +19,8 @@
   <% @user.transactions.first(10).each do |t|%>
     <tr>
       <% t.update_price %>
-      <td><%= link_to t.name, t.listing_url %></td>
-      <td><%= "$#{(t.purchase_price/100).to_s}" %></td>
+      <td data-no-turbolink><%= link_to t.name, t.listing_url %></td>
+      <td><%= "$#{(t.purchase_price).to_s}" %></td>
       <td><%= "$#{t.target_price.to_s}" %></td>
       <td style="color:green"><%= t.format_price %></td>
       <td><%= t.current_savings %></td>

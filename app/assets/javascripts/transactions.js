@@ -29,10 +29,11 @@ $(document).ready(function() {
 					$(id).on('click', function(e){
 
 						e.preventDefault();
-						console.log('jello');
+						console.log(listing.listing_url);
 						$("#transaction_name").val(listing.name);
 						$("#transaction_asin").val(listing.asin);
 						$("#transaction_upc").val(listing.upc);
+						$("#transaction_listing_url").val(listing.listing_url);
 						$("#transaction_purchase_price").val("");
 						$("#transaction_target_price").val("");
 						$("#transaction_start_date").val("");

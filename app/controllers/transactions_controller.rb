@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
 
   def create
     @user = current_user
-    transaction_params = params.require(:transaction).permit(:user_id, :name, :asin, :purchase_price, :target_price, :start_date, :end_date)
+    transaction_params = params.require(:transaction).permit(:user_id, :name, :asin, :purchase_price, :target_price, :start_date, :end_date, :listing_url)
     @transaction = Transaction.create(transaction_params)
     # @user.transaction << @transaction
     current_user.transactions << @transaction
