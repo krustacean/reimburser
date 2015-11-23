@@ -30,13 +30,13 @@ class TransactionsController < ApplicationController
           search_item["name"] = item.get('ItemAttributes/Title')
           search_item["current_price"] = item.get('OfferSummary/LowestNewPrice/FormattedPrice')
           search_item["upc"]= item.get('ItemAttributes/UPC')
-          search_item["listing_url"]= item.get('Item/DetailPageURL')
+          search_item["listing_url"]= item.get('DetailPageURL')
           search_item["image_url"]= item.get('MediumImage/URL')
-          
+
           @searchresult.push search_item
         end
-        render :json => @searchresult 
-        
+        render :json => @searchresult
+
       end
   end
 
