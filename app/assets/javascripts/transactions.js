@@ -9,7 +9,7 @@ $(document).ready(function() {
 	+ "<div class = 'imagethumb'><img src='" + response.image_url + "' width='120' height='160'></div>"
     + "<div class='caption'><h5 class= 'thumbname'>" + response.name.substring(0,75) + "</h5></div>"
 	+ "<p class='product-price'>" + response.current_price + "<br></p><div>"
-	+ "<span class='a-button a-button-primary'>"
+	+ "<span class=''thumbnailbutton a-button a-button-primary'>"
 	+ "<a target='_blank' href=" + response.listing_url + "<span class='a-button-inner'>"
 	+ "<img src='http://ddjax94hptnew.cloudfront.net/assets/images/Amazon-Favicon-64x64.png' class='a-icon a-icon-shop-now'>"
 	+ "<input class='a-button-input' type='submit' value='Submit'>"
