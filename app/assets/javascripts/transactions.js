@@ -9,7 +9,7 @@ $(document).ready(function() {
 	+ "<div class = 'imagethumb'><img src='" + response.image_url + "' width='120' height='160'></div>"
     + "<div class='caption'><h5 class= 'thumbname'>" + response.name.substring(0,75) + "</h5></div>"
 	+ "<p class='product-price'>" + response.current_price + " on <a href=" + response.listing_url + ">Amazon.com</a><br></p><div>"
-	+ "<button class='btn btn-raised' id= '" + response.asin + "'data-toggle='modal' data-target='#complete-dialog'>select</button>";
+	+ "<button class='btn btn-raised' id= '" + response.asin + "'data-toggle='modal' data-target='#complete-dialog'>Select</button>";
 	}
 
 	$("#searchstuff").on('submit', function(e){
@@ -29,11 +29,15 @@ $(document).ready(function() {
 					$(id).on('click', function(e){
 
 						e.preventDefault();
-						console.log('jello');
+						console.log(listing.listing_url);
 						$("#transaction_name").val(listing.name);
 						$("#transaction_asin").val(listing.asin);
 						$("#transaction_upc").val(listing.upc);
-						
+						$("#transaction_listing_url").val(listing.listing_url);
+						$("#transaction_purchase_price").val("");
+						$("#transaction_target_price").val("");
+						$("#transaction_start_date").val("");
+						$("#transaction_end_date").val("");
 						// var search = $("#searchInput").val();
 					
 					});
