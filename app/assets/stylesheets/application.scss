@@ -18,3 +18,23 @@
 body {
 	text-align: center;
 }
+
+.showresults {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start; 
+	align-content: flex-start; 
+	}
+.thumbnail{
+	align-self: auto;
+	width: 200px;
+  	height: 400px;
+
+}
+.imagethumb{
+	max-height: 160px;
+	max-width: auto;
+}
+
