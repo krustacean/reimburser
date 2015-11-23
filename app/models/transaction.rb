@@ -17,4 +17,9 @@ class Transaction < ActiveRecord::Base
       t.update_price
     end
   end
+
+  def current_savings
+     "$#{(self.purchase_price - (self.current_price / 100))}"
+  end
+
 end
