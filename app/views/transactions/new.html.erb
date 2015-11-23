@@ -28,15 +28,27 @@
       </div>
       <div class="modal-body">
 	<%= form_for @transaction do |f| %>
-	  	<div>
+	  	<div>Item Name
 	    <%= f.text_field :name, placeholder: "Item Name", class: "form-control floating-label" %>
 	 	 </div><br>
 	  	<div>
-	    <%= f.text_area :upc, placeholder: "UPC", class: "form-control floating-label" %>
+	    <%= f.hidden_field :upc, placeholder: "UPC", class: "form-control floating-label" %>
 	  	</div>
 	  	<div>
-	    <%= f.text_area :asin, placeholder: "ASIN", class: "form-control floating-label" %>
+	    <%= f.hidden_field :asin, placeholder: "ASIN", class: "form-control floating-label" %>
 	  	</div>
+	  	<div>Purchased Price
+	    <%= f.number_field :purchase_price, placeholder: "Purchased Price", class: "form-control floating-label" %>
+	  	</div><br>
+	  	<div>Target Price
+	    <%= f.number_field :target_price, placeholder: "Target Price", class: "form-control floating-label" %>
+	  	</div><br>
+	  	<div>Purchased Date
+	    <%= f.date_field :start_date, placeholder: "Purchased Date", class: "form-control floating-label" %>
+	  	</div><br>
+	  	<div>End Date
+	    <%= f.date_field :end_date, placeholder: "End Date", class: "form-control floating-label" %>
+	  	</div><br>
 	<%= f.submit "Submit", class: "btn" %>
 	<% end %> 
       </div>
