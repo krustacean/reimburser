@@ -18,6 +18,7 @@ $(document).ready(function() {
 	
 	$("#searchstuff").on('submit', function(e){
 		
+		$(".showresults").empty();
 		e.preventDefault();
 		var search = $("#searchInput").val();
 		console.log(search);
