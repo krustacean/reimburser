@@ -9,9 +9,7 @@ $(document).ready(function() {
 	+ "<div class = 'imagethumb'><img src='" + response.image_url + "' width='120' height='160'></div>"
     + "<div class='caption'><h5 class= 'thumbname'>" + response.name.substring(0,75) + "</h5></div>"
 	+ "<p class='product-price'>" + response.current_price + " on <a href=" + response.listing_url + ">Amazon.com</a><br></p><div>"
-	+ "<span class='btn btn-default'><span class='a-button-inner'>"
-	+ "<input class='a-button-input' type='submit' value='Submit'>"
-	+ "</span></a></span>";
+	+ "<button class='btn btn-raised' id= '" + response.asin + "'data-toggle='modal' data-target='#complete-dialog'>select</button>";
 	}
 
 	$("#searchstuff").on('submit', function(e){
@@ -25,10 +23,24 @@ $(document).ready(function() {
 			dataType: 'json',
 			success: function(data){
 				data.forEach(function(listing){
+					var id = "#"+listing.asin;
 					$(".showresults").append(createHTML(listing));
 					// $(".showresults").append(n.name, n.current_price, n.image_url);
+					$(id).on('click', function(e){
+
+						e.preventDefault();
+						console.log('jello');
+						$("#transaction_name").val(listing.name);
+						$("#transaction_asin").val(listing.asin);
+						$("#transaction_upc").val(listing.upc);
+						
+						// var search = $("#searchInput").val();
+					
+					});
 				});
 			}
 		});
 	});
+
+
 });
