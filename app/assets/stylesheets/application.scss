@@ -11,7 +11,7 @@
  * file per style scope.
  *
  */
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -43,8 +43,22 @@ background-size: cover;
 .imagethumb{
 	max-height: 160px;
 	max-width: auto;
+	
 }
+
 
 .modal-body{
 	text-align:left;
+}
+
+.faq-holder{
+	margin-top: 50px;
+}
+
+.searchtransbut{
+	margin-bottom: 0px;
+	vertical-align: bottom;
+}
+.showresults{
+	margin-top: 34px;
 }

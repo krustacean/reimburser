@@ -9,7 +9,7 @@ $(document).ready(function() {
 	+ "<div class = 'imagethumb'><img src='" + response.image_url + "' width='120' height='160'></div>"
     + "<div class='caption'><h5 class= 'thumbname'>" + response.name.substring(0,75) + "</h5></div>"
 	+ "<p class='product-price'>" + response.current_price + " on <a href=" + response.listing_url + ">Amazon.com</a><br></p><div>"
-	+ "<button class='btn btn-raised' id= '" + response.asin + "'data-toggle='modal' data-target='#complete-dialog'>Select</button>";
+	+ "<button class='searchtransbut btn btn-raised' id= '" + response.asin + "'data-toggle='modal' data-target='#complete-dialog'>Select</button>";
 	}
 
 	$("#searchstuff").on('submit', function(e){
