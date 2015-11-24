@@ -22,4 +22,14 @@ class Transaction < ActiveRecord::Base
      "$#{(self.purchase_price - (self.current_price / 100))}"
   end
 
+  validates :name, presence: true
+
+  validates :start_date, presence: true
+
+  validates :end_date, presence: true
+
+  validates :purchase_price, presence: true
+
+  validates :target_price, presence: true
+
 end

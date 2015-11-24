@@ -29,7 +29,7 @@ $(document).ready(function() {
 					$(id).on('click', function(e){
 
 						e.preventDefault();
-						console.log(listing.listing_url);
+						// console.log(listing.listing_url);
 						$("#transaction_name").val(listing.name);
 						$("#transaction_asin").val(listing.asin);
 						$("#transaction_upc").val(listing.upc);

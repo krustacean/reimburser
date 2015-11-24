@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
     @user = User.find(params[:id])
-    @transaction = Transaction.find(params[:id])
+    # @transaction = Transaction.find(params[:id])
+    @transaction = Transaction.where(:user_id => params[:id])
   end
 
   def edit
@@ -23,4 +24,6 @@ class UsersController < ApplicationController
     user.update_attributes(updated_attributes)
     redirect_to user
   end
+
 end
+

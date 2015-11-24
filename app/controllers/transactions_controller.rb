@@ -39,6 +39,7 @@ class TransactionsController < ApplicationController
     
   end
 
+
   # def show
   #   @user = current_user
   #   @transaction = Transaction.find(params[:id])
