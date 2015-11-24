@@ -1,2 +1,35 @@
-<%= render partial: "/partials/navbar" %>
-<%= @user.email %>
+<span style="float:left;font-size:30px;margin-left:10px">Welcome, <%= @user.email %>!</span><button data-no-turbolink style="float:right; display:block; font-size:30px; margin-right:10px"><%= link_to "Track New Item", new_transaction_path%></button>
+<br>
+<br>
+<br>
+<h4>Your Tracked Purchases</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Purchased Price</th>
+      <th>Target Price</th>
+      <th>Current Price</th>
+      <th>Savings</th>
+      <th>Purchased On</th>
+      <th>Watch Until</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @user.transactions.first(10).each do |t|%>
+    <tr>
+      <% t.update_price %>
+      <td data-no-turbolink><%= link_to t.name, t.listing_url %></td>
+      <td><%= "$#{(t.purchase_price).to_s}" %></td>
+      <td><%= "$#{t.target_price.to_s}" %></td>
+      <% if (t.target_price >= (t.current_price)/100) %>
+      <td style="color:green">
+      <% else %>
+      <td style="color:red"><% end %><%= t.format_price %></td>
+      <td><%= t.current_savings %></td>
+      <td><%= t.start_date.to_s(:long) %></td>
+      <td><%= t.end_date.to_s(:long) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

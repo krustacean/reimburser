@@ -11,10 +11,55 @@
  * file per style scope.
  *
  */
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
 	text-align: center;
+	background-color: #E8E8E8;
+}
+
+#splash {
+height: 1000px;
+background-image: url("https://images.unsplash.com/photo-1430165558479-de3cf8cf1478?ixlib=rb-0.3.5&q=80&fm=jpg&s=7e688c2ab960cee80de2fe8eb69443a5"); 
+background-repeat: no-repeat;
+background-size: cover;
+margin-top: -50px;
+}
+.showresults {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start; 
+	align-content: flex-start; 
+	}
+.thumbnail{
+	align-self: auto;
+	width: 200px;
+  	height: 400px;
+
+}
+.imagethumb{
+	max-height: 160px;
+	max-width: auto;
+	
+}
+
+
+.modal-body{
+	text-align:left;
+}
+
+.faq-holder{
+	margin-top: 50px;
+}
+
+.searchtransbut{
+	margin-bottom: 0px;
+	vertical-align: bottom;
+}
+.showresults{
+	margin-top: 34px;
 }
