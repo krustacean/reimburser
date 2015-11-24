@@ -39,7 +39,14 @@ class TransactionsController < ApplicationController
     
   end
 
-
+  def destroy
+    @user = current_user
+    id = params[:id]
+    transaction = Transaction.find(id)
+    transaction.destroy
+    redirect_to "/users/#{@user.id}"
+    
+  end
   # def show
   #   @user = current_user
   #   @transaction = Transaction.find(params[:id])
