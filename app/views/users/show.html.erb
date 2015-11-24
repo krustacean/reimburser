@@ -22,7 +22,10 @@
       <td data-no-turbolink><%= link_to t.name, t.listing_url %></td>
       <td><%= "$#{(t.purchase_price).to_s}" %></td>
       <td><%= "$#{t.target_price.to_s}" %></td>
-      <td style="color:green"><%= t.format_price %></td>
+      <% if (t.target_price >= (t.current_price)/100) %>
+      <td style="color:green">
+      <% else %>
+      <td style="color:red"><% end %><%= t.format_price %></td>
       <td><%= t.current_savings %></td>
       <td><%= t.start_date.to_s(:long) %></td>
       <td><%= t.end_date.to_s(:long) %></td>
