@@ -6,6 +6,8 @@ gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-amazon'
 
 gem 'amazon-ecs'
+#heroku stuff
+gem "rails_12factor"
 
 gem 'whenever', :require => false
 
