@@ -7,6 +7,18 @@ class TransactionsController < ApplicationController
   end
 
   def edit
+    id = params[:id]
+    @transaction = Transaction.find(id)
+  end
+
+  def update
+    @user = current_user
+    id = params[:id]
+    transaction = Transaction.find(id)
+
+    updated_attributes = params.require(:transaction).permit(:user_id, :name, :asin, :purchase_price, :target_price, :start_date, :end_date, :listing_url)
+    transaction.update_attributes(updated_attributes)
+    redirect_to "/users/#{@user.id}"
   end
 
   def search
