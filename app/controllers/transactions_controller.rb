@@ -32,11 +32,11 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.create(transaction_params)
     # @user.transaction << @transaction
     current_user.transactions << @transaction
-   
-  
+
+
     current_user.save
-    redirect_to "/users/#{@user.id}"
-    
+    redirect_to user_path(current_user)
+
   end
 
   def destroy
@@ -44,8 +44,8 @@ class TransactionsController < ApplicationController
     id = params[:id]
     transaction = Transaction.find(id)
     transaction.destroy
-    redirect_to "/users/#{@user.id}"
-    
+    redirect_to user_path(current_user)
+
   end
   # def show
   #   @user = current_user
