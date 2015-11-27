@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
     @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to user_path(current_user)
+    end
     # @transaction = Transaction.find(params[:id])
     @transaction = Transaction.where(:user_id => params[:id])
   end
@@ -26,4 +29,3 @@ class UsersController < ApplicationController
   end
 
 end
-
