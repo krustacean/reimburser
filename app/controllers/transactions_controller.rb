@@ -18,7 +18,7 @@ class TransactionsController < ApplicationController
 
     updated_attributes = params.require(:transaction).permit(:user_id, :name, :asin, :purchase_price, :target_price, :start_date, :end_date, :listing_url)
     transaction.update_attributes(updated_attributes)
-    redirect_to "/users/#{@user.id}"
+    redirect_to user_path(current_user)
   end
 
   def search
