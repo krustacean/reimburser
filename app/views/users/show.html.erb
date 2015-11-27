@@ -20,7 +20,7 @@
   <% @user.transactions.first(10).each do |t|%>
     <tr>
       <% t.update_price %>
-      <td data-no-turbolink><%= link_to t.name, t.listing_url %></td>
+      <td data-no-turbolink><%= link_to t.name[0..30], t.listing_url %></td>
       <td><%= "$#{(t.purchase_price).to_s}" %></td>
       <td><%= "$#{t.target_price.to_s}" %></td>
       <% if (t.target_price >= (t.current_price)/100) %>
@@ -69,7 +69,7 @@
                 <%= f.date_field :end_date, placeholder: "End Date", class: "form-control floating-label" %>
                 </div><br>
             <%= f.submit "Submit", class: "btn" %>
-            <% end %> 
+            <% end %>
           </div>
         </div>
       </div>
